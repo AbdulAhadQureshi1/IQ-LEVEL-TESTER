@@ -1,4 +1,8 @@
 import random
+
+score = 0
+again = "Y"
+
 def results(n):
     print("Your Score: \t", n)
     if n >= 3:
@@ -9,8 +13,18 @@ def results(n):
         print("Your IQ Level: \t Average")
     elif n < 2:
         print("Your IQ Level: \t Below Average")
+        
+def validate (ans):
+    global score
+    guess = input("Your Answer: \t").upper()
+    if guess == "break": return True
+    if guess == 'A' or guess == 'C' or guess != 'D' or guess == 'B':
+        if guess == ans:
+            score += 1
+    else:
+        print(">>>>Error! Make sure to give input \"A B C D\" or \"break\". Your mark for this question is deducted! Make sure not to repeat this mistake!<<<<")
 #==================================================================MAIN PROGRAM=================================================================
-while True:
+while again == 'Y':
     print("            ============================================================IQ LEVEL ESTIMATION PROGRAM=================================================================")
     print("      ===================This program will ask you different question and tell your estimated IQ level based on your answers to the questions!============================")
     print("=================>>>>>>> Type \"break\" to end the program and get your results. Else program will automatically end once questions are finished! <<<<<<<<<=====================")
@@ -26,13 +40,7 @@ while True:
         *OPTIONS*    
             A. 32       B. 64       C. 81       D. 256
             ''')
-            guess = input("Your Answer: \t")
-            if guess == 'B':
-                score += 1
-            elif guess == "break":
-                break
-            elif guess != 'A' and guess != 'C' and guess != 'D':
-                print(">>>>Error! Make sure to give input \"A B C D\" or \"break\". Your mark for this question is deducted! Make sure not to repeat this mistake!<<<<")
+            if validate ("B"): break
         elif i == 1: #D
             print("\n Question # ",q_num, end="\t")
             print('''
@@ -41,13 +49,7 @@ while True:
         *OPTIONS*:
             A. drawing      B. writing      C. stirring     D. eating
             ''')
-            guess = input("Your Answer: \t")
-            if guess == 'D':
-                score += 1
-            elif guess == "break":
-                break
-            elif guess != 'A' and guess != 'C' and guess != 'B':
-                print(">>>>Error! Make sure to give input \"A B C D\" or \"break\". Your mark for this question is deducted! Make sure not to repeat this mistake!<<<<")
+            if validate ("D"): break
         elif i == 2: #C
             print("\n Question # ",q_num, end="\t")
             print('''
@@ -60,13 +62,7 @@ while True:
             A. talkative and wind           B. job and angry
             C. talkative and loquacious     D. ecstatic and angry
             ''')
-            guess = input("Your Answer: \t")
-            if guess == 'C':
-                score += 1
-            elif guess == "break":
-                break
-            elif guess != 'A' and guess != 'B' and guess != 'D':
-                print(">>>>Error! Make sure to give input \"A B C D\" or \"break\". Your mark for this question is deducted! Make sure not to repeat this mistake!<<<<")
+            if validate ("C"): break
         elif i == 3: #C
             print("\n Question # ",q_num, end="\t")
             print('''
@@ -75,13 +71,7 @@ while True:
         *OPTIONS*:
             A. 1 and 2      B. 1 and 4      C. 2 and 3      D. 2 and 4
             ''')
-            guess = input("Your Answer: \t")
-            if guess == 'C':
-                score += 1
-            elif guess == "break":
-                break
-            elif guess != 'A' and guess != 'B' and guess != 'D':
-                print(">>>>Error! Make sure to give input \"A B C D\" or \"break\". Your mark for this question is deducted! Make sure not to repeat this mistake!<<<<")
+            if validate ("C"): break
         elif i == 4: #5
             print("\n Question # ",q_num, end="\t")
             print('''
@@ -90,13 +80,7 @@ while True:
         *OPTIONS*:
             A. 3        B. 7        C. 24        D. 5
             ''')
-            guess = input("Your Answer: \t")
-            if guess == 'D':
-                score += 1
-            elif guess == "break":
-                break
-            elif guess != 'A' and guess != 'C' and guess != 'B':
-                print(">>>>Error! Make sure to give input \"A B C D\" or \"break\". Your mark for this question is deducted! Make sure not to repeat this mistake!<<<<")
+            if validate ("D"): break
         elif i == 5:  #Blood
             print("\n Question # ",q_num, end="\t")
             print('''
@@ -104,13 +88,7 @@ while True:
         *OPTIONS*:
             A. Blood        B. Rose     C. Carpet       D. None
             ''')
-            guess = input("Your Answer: \t")
-            if guess == 'A':
-                score += 1
-            elif guess == "break":
-                break
-            elif guess != 'B' and guess != 'C' and guess != 'D':
-                print(">>>>Error! Make sure to give input \"A B C D\" or \"break\". Your mark for this question is deducted! Make sure not to repeat this mistake!<<<<")
+            if validate ("A"): break
         elif i == 6: #C
             print("\n Question # ",q_num, end="\t")
             print('''
@@ -118,13 +96,7 @@ while True:
         *OPTIONS*:
             A. A        B. B        C. C        D. D
             ''')
-            guess = input("Your Answer: \t")
-            if guess == 'C':
-                score += 1
-            elif guess == "break":
-                break
-            elif guess != 'A' and guess != 'B' and guess != 'D':
-                print(">>>>Error! Make sure to give input \"A B C D\" or \"break\". Your mark for this question is deducted! Make sure not to repeat this mistake!<<<<")
+            if validate ("C"): break
         elif i == 7: #B
             print("\n Question # ",q_num, end="\t")
             print('''
@@ -132,13 +104,7 @@ while True:
         *OPTIONS*:
             A. MIRLCAES     B. MIRLACSE     C. RIMCALSE     D. RIMLCAES
             ''')
-            guess = input("Your Answer: \t")
-            if guess == 'B':
-                score += 1
-            elif guess == "break":
-                break
-            elif guess != 'A' and guess != 'C' and guess != 'D':
-                print(">>>>Error! Make sure to give input \"A B C D\" or \"break\". Your mark for this question is deducted! Make sure not to repeat this mistake!<<<<")
+            if validate ("B"): break
         elif i == 8: #Friday
             print("\n Question # ",q_num, end="\t")
             print('''
@@ -146,13 +112,7 @@ while True:
         *OPTIONS*:
             A. Monday       B. Friday       C. Saturday         D. Sunday
             ''')
-            guess = input("Your Answer: \t")
-            if guess == 'B':
-                score += 1
-            elif guess == "break":
-                break
-            elif guess != 'A' and guess != 'C' and guess != 'D':
-                print(">>>>Error! Make sure to give input \"A B C D\" or \"break\". Your mark for this question is deducted! Make sure not to repeat this mistake!<<<<")
+            if validate ("B"): break
         elif i == 9: #South-west
             print("\n Question # ",q_num, end="\t")
             print('''
@@ -160,16 +120,10 @@ while True:
         *OPTIONS*:
             A. South-West       B. South       C. West      D. East-South
             ''')
-            guess = input("Your Answer: \t")
-            if guess == 'A':
-                score += 1
-            elif guess == "break":
-                break
-            elif guess != 'B' and guess != 'C' and guess != 'D':
-                print(">>>>Error! Make sure to give input \"A B C D\" or \"break\". Your mark for this question is deducted! Make sure not to repeat this mistake!<<<<")
+            if validate ("A"): break
     print("\n==================================================================YOUR RESULTS ARE READY==============================================================\n")
     while True:
-        result = input("Enter 'Y' to get your result or 'N' to finsih the test without results:\t")
+        result = input("Enter 'Y' to get your result or 'N' to finsih the test without results:\t").upper()
         if result == 'Y':
             results(score)
             break
@@ -179,8 +133,4 @@ while True:
         else:
             print("Make sure to input 'Y' or 'N'.")
     print("\n=================================================================DO YOU WANT TO TRY AGAIN?============================================================\n")
-    again = input("Do you want to Try Again? (Y/N) Any other answer will lead to auto repitition of program:   ")
-    if again == 'N':
-        break
-    elif again == 'Y':
-        continue
+    again = input("Do you want to Try Again? (Y/N):   ")
