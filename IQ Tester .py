@@ -18,7 +18,7 @@ def validate (ans):
     global score
     guess = input("Your Answer: \t").upper()
     if guess == "break": return True
-    if guess == 'A' or guess == 'C' or guess != 'D' or guess == 'B':
+    if guess == 'A' or guess == 'C' or guess == 'D' or guess == 'B':
         if guess == ans:
             score += 1
     else:
